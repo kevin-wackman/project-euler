@@ -1,7 +1,6 @@
 import System.Directory
---import System.FilePath.Windows
 import System.IO
-import Data.List
+import Control.Monad
 
 
 correctFileName :: FilePath -> FilePath
@@ -13,5 +12,5 @@ correctFileName n = n
 
 main = do
     paths <- listDirectory "."
-    sequence $ map (\x -> renameFile x (correctFileName x)) $ paths
-    --print $ map correctFileName $ paths
+    files <- filterM doesFileExist $ paths
+    sequence $ map (\x -> renameFile x (correctFileName x)) $ files
