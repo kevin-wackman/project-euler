@@ -5,6 +5,6 @@ calcNextRow (x:xs) (y:ys)
     | otherwise             = (max (x+y) (head xs + y)):(calcNextRow (xs) ys) 
     
 main = do
-    str <- readFile "e67in.txt"
+    str <- readFile "e067in.txt"
     let nums = map (map read) $ map words $ lines str :: [[Int]]
     print $ maximum $ foldl1 calcNextRow nums

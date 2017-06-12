@@ -23,6 +23,6 @@ checkForAnd :: [Int] -> Bool
 checkForAnd = ([32,97,110,100,32] `substring`)
 
 main = do
-    str <- readFile "e59in.txt"
+    str <- readFile "e059in.txt"
     let nums = map read $ splitOn "," str :: [Int]
     print $ sum $ head $ filter checkForAnd $ map (decipher nums) keys

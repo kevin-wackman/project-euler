@@ -13,5 +13,5 @@ getWordValue xs = foldl (\n x -> n+(ord x)-64) 0 xs
 
 
 main = do
-    str <- readFile "e22in.txt"
+    str <- readFile "e022in.txt"
     print $ sum $ zipWith (*) [1..] $ map getWordValue $ sort $ parse $ stripQuotes str

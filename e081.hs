@@ -27,6 +27,6 @@ testArr = [[131,673,234,103,18],
     [805,732,524,37,331]]
     
 main = do
-    str <- readFile "e81in.txt"
+    str <- readFile "e081in.txt"
     let arr = map (map read) $ map (splitOn ",") $ lines str
     print $ computeArray arr

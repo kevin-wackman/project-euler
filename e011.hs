@@ -26,6 +26,6 @@ getAllUDiags :: (Num a) => [[a]] -> [a]
 getAllUDiags xs = map product [getUDiag4 xs row col | row<-[0..16], col<-[3..19]]
 
 main = do
-    str <- readFile "e11in.txt"
+    str <- readFile "e011in.txt"
     let nums = map (map read) $ map words $ lines str :: [[Int]]
     print $ map (\fun -> maximum (fun nums)) [getAllRows, getAllCols, getAllDDiags, getAllUDiags]

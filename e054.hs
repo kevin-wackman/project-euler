@@ -12,7 +12,7 @@ instance Ord Card where
     (Card n1 _) `compare` (Card n2 _) = n1 `compare` n2
     
 main = do
-    str <- readFile "e54in.txt"
+    str <- readFile "e054in.txt"
     let hands = lines str
     print $ length $ filter (== GT) $ map (\(x,y) -> compareHands x y) $ map readGame hands
     

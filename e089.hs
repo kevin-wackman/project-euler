@@ -32,7 +32,7 @@ writeNumeral n
     | n >= 1    = 'I':(writeNumeral     (n-1))
 
 main = do
-    text <- readFile "e89in.txt"
+    text <- readFile "e089in.txt"
     let numerals = lines text
     let preLength = sum $ map length numerals
     let newmerals = map writeNumeral $ map readNumeral numerals
