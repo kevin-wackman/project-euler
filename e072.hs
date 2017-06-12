@@ -1,3 +1,5 @@
+--UNFINISHED--
+
 isCoprime :: Integral a => a -> a -> Bool
 isCoprime n = (== 1) . gcd n
 

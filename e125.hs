@@ -1,3 +1,5 @@
+--UNFINISHED--
+
 squares = map (^2) [1..]
 
 isPalindrome :: Int -> Bool
