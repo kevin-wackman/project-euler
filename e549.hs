@@ -1,7 +1,5 @@
 fac :: Integer -> Integer
-fac n
-    | n <= 1    = 1
-    | otherwise = n*fac(n-1)
+fac n = product [2..n]
 
 lowestDiv :: Integer -> Integer
 lowestDiv n
