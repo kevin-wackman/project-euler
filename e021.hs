@@ -1,4 +1,8 @@
-factors n = [x | x <- [1..n `div` 2], n `mod` x == 0]
+import Data.List
+import Data.Numbers.Primes
+
+factors :: Integral a => a -> [a]
+factors = init . nub . map product . subsequences . primeFactors
 
 checkAmicable :: Int -> Bool
 checkAmicable n = ((sum $ factors n) < 1000) && (n == (sum $ factors $ sum $ factors n))
@@ -12,4 +16,4 @@ factorSum :: Int -> Int
 factorSum = sum . factors
     
 main = do
-    print $ sum $ filter isAmicable [1..9999]
+    print $ sum $ filter isAmicable [2..9999]
