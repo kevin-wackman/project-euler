@@ -6,4 +6,4 @@ fifthPower :: Int -> Bool
 fifthPower x = x == (sum $ map (\x -> x^5) $ digits x)
 
 main = do
-    print $ sum $ filter fifthPower [2..999999]
+    print $ sum $ filter fifthPower [2..(9^5)*6]
