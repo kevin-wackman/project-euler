@@ -9,4 +9,4 @@ findCombinations t n
     | otherwise = findCombinations (next t) n + (findCombinations t (n-t))
     
 main = do
-    print (+(-1)) $ findCombinations 100 100
+    print $ (+(-1)) $ findCombinations 100 100

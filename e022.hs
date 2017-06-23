@@ -9,7 +9,7 @@ stripQuotes :: String -> String
 stripQuotes = filter (/= '"')
 
 getWordValue :: String -> Int
-getWordValue xs = foldl (\n x -> n+(ord x)-64) 0 xs
+getWordValue = foldl (\n x -> n+(ord x)-64) 0 
 
 
 main = do
