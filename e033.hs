@@ -1,9 +1,8 @@
 import Data.Ratio
+import Data.Char (digitToInt)
 import Data.Set (fromList, difference)
 
-digits :: Int -> [Int]
-digits 0 = []
-digits x = digits (div x 10) ++ [mod x 10]
+digits = map digitToInt . show
 
 filteredArray = filter ((> 0) . (`mod` 10)) [11..99]
 
@@ -19,10 +18,3 @@ checkPair (x,y) =
     
 main = do
     print $ denominator $ product $ map (\(x,y)->x%y) $ filter checkPair pairs
-    
-    
-    --16/64
-    --26/65
-    --19/95
-    --49/98
-    
