@@ -32,10 +32,13 @@ takeTurn xs =
     let rollVectors = map (\x -> getRollVector x xs) [0..39]
     in adjustSpecials $ foldr1 addLists rollVectors
     
-applyUntilStable :: Eq a => (a -> a) -> a -> a
+applyUntilStable :: ([Double] -> [Double]) -> [Double] -> [Double]
 applyUntilStable f xs = 
     let xs'  = f xs
-    in if xs == xs' then xs' else (applyUntilStable f xs')
+    in if xs ==# xs' then xs' else (applyUntilStable f xs')
+    
+(==#) :: [Double] -> [Double] -> Bool
+(==#) xs ys = all (< 0.00001) $ zipWith (-) xs ys
     
     
 cc1 = [1/16,0,14/16]++(replicate 7 0) ++ (1/16:(replicate 29 0))
