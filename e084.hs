@@ -38,7 +38,7 @@ applyUntilStable f xs =
     in if xs ==# xs' then xs' else (applyUntilStable f xs')
     
 (==#) :: [Double] -> [Double] -> Bool
-(==#) xs ys = all (< 0.00001) $ zipWith (-) xs ys
+(==#) xs ys = all ((< 0.00001) . abs) $ zipWith (-) xs ys
     
     
 cc1 = [1/16,0,14/16]++(replicate 7 0) ++ (1/16:(replicate 29 0))
